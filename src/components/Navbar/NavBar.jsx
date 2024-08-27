@@ -2,7 +2,7 @@ import CartWidget from "../CartWidget/CartWidget"
 
 const Navbar = () => {
     return (
-        <nav className="Navbar">
+        <nav>
             <h3>Elechouse</h3>
             <div>
                 <button>Celulares</button>
