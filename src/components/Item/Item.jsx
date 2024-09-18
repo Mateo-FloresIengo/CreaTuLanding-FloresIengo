@@ -1,23 +1,25 @@
 import styles from './Item.module.css'
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
-function Item ({ id, name, image, price, stock }) {
+function Item ({ product }) {
 
     return (
-        <div className={styles.itemContainer}>
-            <h2>
-                {name}
-            </h2>
-            <img src={image} alt={name} />
-            <p>
-                Precio: ${price}
-            </p>
-            <p>
-                Stock disponible: {stock}
-            </p>
-            <button>
-                Ver detalle
-            </button>
-        </div>
+
+        <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={product.thumbnail} />
+        <Card.Body>
+            <Card.Title>{product.title}</Card.Title>
+            <Card.Text>{product.description}</Card.Text>
+            <Button variant="primary"
+            to={`/product/${product.id}`}
+            as={Link}
+            >
+                More info
+            </Button>
+        </Card.Body>
+        </Card>
     )
 }
 
