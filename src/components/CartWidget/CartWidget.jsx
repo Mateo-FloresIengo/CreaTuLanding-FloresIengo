@@ -1,9 +1,9 @@
-import carrito from './assets/carrito.png'
+import cart from './assets/cart.png'
 
-const CartWidget = () => {
+function CartWidget () {
     return (
         <div>
-            <img src={carrito} alt="cart-widget" className="logo"/>
+            <img src={cart} alt="cart-widget" className="logo"/>
             0
         </div>
     )

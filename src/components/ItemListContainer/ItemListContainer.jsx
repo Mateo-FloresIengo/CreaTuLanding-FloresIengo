@@ -1,21 +1,24 @@
 import { useState, useEffect } from "react"
+import { getProducts } from '../../data/products'
 import ItemList from "../ItemList/ItemList"
-import { useParams } from "react-router-dom"
 
 function ItemListContainer ({props}) {
-    const [items, setItems] = useState([])
-    const { id } = useParams()
+    const [products, setProducts] = useState([])
 
     useEffect(() => {
-        fetch('https://dummyjson.com/products?limit=20')
-            .then((res) => res.json())
-            .then((res) => setItems(res))
+        getProducts()
+            .then(res => {
+            setProducts(res)
+            })
+            .catch(err => {
+                console.error(err)
+            })
     }, [])
 
     return (
         <div>
-            <h1>{'Nuestros Productos'}</h1>
-            <ItemList items={items}/>
+            <h1>{props}</h1>
+            <ItemList products={products} />
         </div>
     )
 }
