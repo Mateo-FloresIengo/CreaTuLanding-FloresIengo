@@ -1,29 +1,25 @@
+import styles from './ItemCount.module.css'
 import { useState } from "react"
+import { useCartContext } from '../../context/cartContext'
 
-function ItemCount ({stock, initial, onAdd}) {
-    const [quantity, setQuantity] = useState(initial)
+function ItemCount ({ item }) {
+    const [count, setCount] = useState(1)
 
-    const increment = () => {
-        if(quantity < stock) {
-            setQuantity(quantity +1)
-        }
-    }
+    const { addToCart } = useCartContext()
 
-    const decrement = () => {
-        if(quantity > 1) {
-            setQuantity(quantity -1)
-        }
-    }
+    const add = () => setCount(count + 1)
+    const restar = () => setCount(count - 1)
+    const handleAddToCart = () => addToCart({...item, qty: count})
 
     return(
-        <div className="Counter">
-            <div className="Controls">
-                <button className="Button" onClick={decrement}> - </button>
-                <h3 className="Number">{quantity}</h3>
-                <button className="Button" onClick={increment}> + </button>
+        <div className={styles.counter}>
+            <div className={styles.controls}>
+                <p>{count}</p>
+                <button className={styles.button} onClick={restar}> - </button>
+                <button className={styles.button} onClick={add}> + </button>
             </div>
-            <div>
-                <button className="Button" onClick={() => onAdd(quantity)} disabled={!stock}>
+            <div className={styles.addToCart}>
+                <button className={styles.button} onClick={handleAddToCart}>
                     Agregar al carrito
                 </button>
             </div>

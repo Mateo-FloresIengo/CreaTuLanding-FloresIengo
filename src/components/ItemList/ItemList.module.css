@@ -1,0 +1,8 @@
+.listGroup {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    row-gap: 2rem;
+    margin: 0 3rem;
+}

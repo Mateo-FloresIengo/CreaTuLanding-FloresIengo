@@ -1,6 +1,12 @@
 .cardItem {
     background-color: rgba(48, 91, 145, 0.593);
     border-radius: 8px;
+    margin: 2rem 8rem;
+
+}
+
+.header {
+    padding-top: 0.01em;
 }
 
 .itemImg {
@@ -10,11 +16,7 @@
     object-fit: cover;
     padding: 0 2rem;
 }
-
-.itemFooter {
-    padding-bottom: 1rem;
-}
-
+/*
 .btnCard {
     border-radius: 8px;
     border: 1px solid transparent;
@@ -27,3 +29,4 @@
     cursor: pointer;
     transition: 0.4s;
 }
+*/

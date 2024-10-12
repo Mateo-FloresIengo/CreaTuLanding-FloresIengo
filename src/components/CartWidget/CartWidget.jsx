@@ -1,10 +1,14 @@
-import cart from './assets/cart.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import styles from './CartWidget.module.css'
+import { useCartContext } from '../../context/cartContext'
 
 function CartWidget () {
+    const { cart } = useCartContext()
     return (
         <div>
-            <img src={cart} alt="cart-widget" className="logo"/>
-            0
+            <FontAwesomeIcon className={styles.iconCart} icon={faCartShopping} />
+            <p>{cart.length}</p>
         </div>
     )
 }

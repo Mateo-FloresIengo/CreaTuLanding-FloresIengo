@@ -2,9 +2,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: rgb(48, 91, 140);
+}
+
+.divList {
+    display: flex;
+    align-items: center;
 }
 
 ul {
     list-style: none;
     display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navItem {
+    padding-right: 1rem;
 }
